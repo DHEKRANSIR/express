@@ -11,7 +11,7 @@ app.use(express.static("./public"))
     console.log(day)
     let hour=date.getHours()
     console.log(hour)
-    if ((day !== 0 && day !== 6 )&& (hour <= 17 && hour >= 10)) {
+    if ((day !== 0 && day !== 6 )&& (hour <= 17 && hour >= 9)) {
         next();
     } 
     
@@ -20,7 +20,8 @@ app.use(express.static("./public"))
     }
 
 })
-  app.get('/', function (req, res,next) {
+app.use(express.static("./public"))
+app.get('/', function (req, res,next) {
     res.send('Welcome Home');
   });
 
